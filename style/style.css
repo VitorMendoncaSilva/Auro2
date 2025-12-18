@@ -291,7 +291,7 @@ main, .container{
   gap: 10px;
   position: fixed;        /* para ficar fixo na tela ao rolar */
   top: 150px;             /* altura do seu menu fixo (ajuste conforme necessário) */
-  right: 250px;            /* distância da borda direita */
+  right: 90px;            /* distância da borda direita */
   width: 300px;
   background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
