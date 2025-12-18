@@ -180,7 +180,7 @@ main, .container{
 
 .slider {
   position: relative;
-  z-index: 2; /* Acima do mascote */
+  z-index: 2;
   width: 800px;
   height: 400px;
   background-color: #fff;
@@ -188,100 +188,49 @@ main, .container{
   border-radius: 10px;
 }
 
+/* trilho que desliza */
 .slides {
-  width: 3200px; /* 800px * 4 */
-  height: 400px;
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  gap: 0;
+
+  /* SCROLL REAL */
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  /* IMPORTANTE: JS controla o movimento */
+  scroll-behavior: auto;
+
+  /* swipe mobile */
+  touch-action: pan-x;
+
+  /* esconder scrollbar */
+  scrollbar-width: none;
 }
 
-.slides input {
+.slides::-webkit-scrollbar {
   display: none;
 }
 
-.slider input[type="radio"] {
-  display: none;
+/* garante que os slides não "esticam" */
+.slides > * {
+  flex: 0 0 100%;
 }
 
+/* cada slide */
 .slide {
-  width: 25%;
+  min-width: 800px; /* mesmo tamanho do slider */
+  height: 100%;
+  flex-shrink: 0;
   position: relative;
 }
 
 .slide img {
-  width: 800px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.manual-navigation {
-  position: absolute;
-  left: 50%;
-  width: 800px;
-  margin-top: -40px;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-}
-
-.manual-bnt {
-  border: 2px solid #0097b2;
-  padding: 6px;
-  border-radius: 50%;
-  margin: 0 8px;
-  cursor: pointer;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.manual-bnt:not(:last-child) {
-  margin-right: 40px;
-}
-
-.manual-bnt:hover {
-  background-color: #0097b2;
-}
-
-#radio1:checked ~ .slides {
-  transform: translateX(0%);
-}
-
-#radio2:checked ~ .slides {
-  transform: translateX(-25%);
-}
-
-#radio3:checked ~ .slides {
-  transform: translateX(-50%);
-}
-
-#radio4:checked ~ .slides {
-  transform: translateX(-75%);
-}
-
-.navigation-auto div {
-  border: 2px solid #0097b2;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 1s;
-}
-
-.navigation-auto {
-  position: absolute;
-  width: 800px;
-  margin-top: 360px;
-  display: flex;
-  justify-content: center;
-}
-
-.navigation-auto div:not(:last-child) {
-  margin-right: 40px;
-}
-
-#radio1:checked ~ .manual-navigation label:nth-of-type(1),
-#radio2:checked ~ .manual-navigation label:nth-of-type(2),
-#radio3:checked ~ .manual-navigation label:nth-of-type(3),
-#radio4:checked ~ .manual-navigation label:nth-of-type(4) {
-  background-color: #0097b2;
-}
 /*FIM CARROSSEL------------------------------------------------------------*/
 
 /* Cadastro */
