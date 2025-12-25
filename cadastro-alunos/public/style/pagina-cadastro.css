@@ -1,0 +1,68 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-radio:checked + label,
+.custom-checkbox:checked + label {
+  background-color: #0097b2;
+  color: white;
+  border-color: #0097b2;
+}
+
+.custom-radio:checked + label svg,
+.custom-checkbox:checked + label svg {
+  color: white;
+}
+
+.input-field:focus {
+  border-color: #0097b2;
+  box-shadow: 0 0 0 3px rgba(0, 151, 178, 0.15);
+}
+
+.btn-submit {
+  background-color: #e0b31e;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #c9a01b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(224, 179, 30, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.card-option {
+  transition: all 0.2s ease;
+}
+
+.card-option:hover {
+  border-color: #0097b2;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.success-message {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
